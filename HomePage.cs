@@ -78,7 +78,10 @@ namespace FinalAssignment
         }
                 
         private void button1_Click(object sender, EventArgs e)
-        {            
+        {
+            Profile profile = new Profile(username);
+            profile.ShowDialog();
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -113,6 +116,13 @@ namespace FinalAssignment
         {
             Yoga yoga = new Yoga(username);
             yoga.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            History history = new History(username);
+            history.ShowDialog();
             this.Close();
         }
 

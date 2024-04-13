@@ -128,11 +128,12 @@
             "What is your pets name?",
             "What is your best friend\'s name?",
             "What is your grandfather\'s name?"});
-            this.securityQuestions.Location = new System.Drawing.Point(78, 189);
+            this.securityQuestions.Location = new System.Drawing.Point(78, 191);
             this.securityQuestions.Name = "securityQuestions";
             this.securityQuestions.Size = new System.Drawing.Size(246, 33);
             this.securityQuestions.TabIndex = 7;
             this.securityQuestions.Visible = false;
+            this.securityQuestions.SelectedIndexChanged += new System.EventHandler(this.securityQuestions_SelectedIndexChanged);
             // 
             // textAnswer
             // 

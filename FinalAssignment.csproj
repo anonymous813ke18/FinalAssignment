@@ -68,6 +68,12 @@
     <Compile Include="Cycling.Designer.cs">
       <DependentUpon>Cycling.cs</DependentUpon>
     </Compile>
+    <Compile Include="History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
     <Compile Include="HistoryFunctions.cs" />
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -129,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="Cycling.resx">
       <DependentUpon>Cycling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History.resx">
+      <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>

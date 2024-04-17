@@ -83,63 +83,63 @@ namespace FinalAssignment
         {
             Profile profile = new Profile(username);
             profile.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void labelWalking_Click(object sender, EventArgs e)
         {
             Walking walking = new Walking(username);
             walking.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void labelRunning_Click(object sender, EventArgs e)
         {
             Running running = new Running(username);
             running.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void labelSwimming_Click(object sender, EventArgs e)
         {
             Swimming swimming = new Swimming(username);
             swimming.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void labelYoga_Click(object sender, EventArgs e)
         {
             Yoga yoga = new Yoga(username);
             yoga.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             History history = new History(username);
             history.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void labelCycling_Click(object sender, EventArgs e)
         {
             Cycling cycling = new Cycling(username);
             cycling.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void labelJumpRope_Click(object sender, EventArgs e)
         {
             JumpRope jumpRope = new JumpRope(username);
             jumpRope.ShowDialog();
-            this.Close();
+            this.Hide();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace FinalAssignment
         private void label2_Click(object sender, EventArgs e)
         {
             registrationForm.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace FinalAssignment
                     MessageBox.Show("Login Successful");
                     HomePage homePage = new HomePage(textUsername.Text);
                     homePage.ShowDialog();
-                    this.Close();
+                    this.Hide();
                 }
                 else
                 {

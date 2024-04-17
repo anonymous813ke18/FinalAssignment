@@ -33,7 +33,7 @@ namespace FinalAssignment
         {
             LoginForm obj = new LoginForm();
             obj.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void RegistrationBtn_Click(object sender, EventArgs e)

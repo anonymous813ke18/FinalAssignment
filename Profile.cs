@@ -107,7 +107,7 @@ namespace FinalAssignment
         {
             HomePage homePage = new HomePage(username);
             homePage.ShowDialog();
-            this.Close();
+            this.Hide();
         }
     }
 }

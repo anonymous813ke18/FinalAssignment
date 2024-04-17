@@ -52,7 +52,7 @@ namespace FinalAssignment
         {
             HomePage obj3 = new HomePage(result, username, dateTimePicker.Text);
             obj3.ShowDialog();
-            this.Close();
+            this.Hide();
         }
     }
 }

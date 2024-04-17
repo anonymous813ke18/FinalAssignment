@@ -13,7 +13,7 @@ namespace FinalAssignment
 {
     public partial class HomePage : Form
     {
-        String username, date;
+        String username, date, total_caloriesS;
         float caloriesBurnt, total_calories;
 
         HistoryFunctions historyFunctions = new HistoryFunctions();
@@ -28,6 +28,8 @@ namespace FinalAssignment
         {
             InitializeComponent();
             this.username = username;
+            total_calories = calorieGoal.getFromHistory(username, DateTime.Now.ToString("dd MMMM yyyy"));
+            solidGauge1.Value = calorieGoal.calculateGoalPercent(total_calories, calorieGoal.getGoal(username));
         }
 
         public HomePage(float caloriesBurnt, String username, String date)

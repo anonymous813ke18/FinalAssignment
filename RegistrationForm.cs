@@ -90,7 +90,12 @@ namespace FinalAssignment
             InsertOperations insertOperations = new InsertOperations();
             inputResult = insertOperations.insertIntoUserInformation(firstName, lastName, height, weight, phoneNumber, email, gender, username, password, securityQ, answer);
             if (inputResult)
+            {
                 MessageBox.Show("Registration Completed.");
+                HomePage homePage = new HomePage(username);
+                homePage.ShowDialog();
+                this.Close();
+            }
             else
                 MessageBox.Show("Registration failed." + inputResult);
         }

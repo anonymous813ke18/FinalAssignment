@@ -17,7 +17,7 @@ namespace FinalAssignment
         //    this.goalAchieved = goalAchieved;
         //}
 
-        String connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:/Users/Asus/OneDrive/Desktop/VIIE Sem 2/Designing Object Oriented Computer Program/FinalAssignment.mdb;";
+        String connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:/Users/Asus/OneDrive/Desktop/VIIE Sem 2/Designing Object Oriented Computer Program/FinalAssignment/bin/FinalAssignment.mdb;";
 
         public float calculateGoalPercent(float goalAchieved, float totalGoal)
         {
@@ -85,6 +85,27 @@ namespace FinalAssignment
             catch (Exception e) { return 0; }
 
             return (MET * weight * time);
+        }
+
+        public float getFromHistory(String username, String date) 
+        {
+            String query = "SELECT * FROM History WHERE Username = '" + username + "' AND Date = '" + date + "'";
+            try
+            {
+                OleDbConnection connection = new OleDbConnection(connectionString);
+                OleDbCommand command = new OleDbCommand(query, connection);
+                connection.Open();
+                OleDbDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        return float.Parse(reader["Total_Calories"].ToString());
+                    }
+                }
+                connection.Close();
+                return 0;
+            } catch (Exception e) { return 0; }
         }
     }
 }

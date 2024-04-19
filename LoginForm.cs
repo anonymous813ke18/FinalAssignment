@@ -12,6 +12,7 @@ namespace FinalAssignment
 {
     public partial class LoginForm : Form
     {
+        public static String lastMessageBoxShownMessage;
         public LoginForm()
         {
             InitializeComponent();
@@ -24,13 +25,13 @@ namespace FinalAssignment
         
         Boolean pictureBoxFlag = false;
 
-        private void label2_Click(object sender, EventArgs e)
+        public void label2_Click(object sender, EventArgs e)
         {
             registrationForm.ShowDialog();
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             bool result;
 
@@ -41,6 +42,7 @@ namespace FinalAssignment
                 if (result)
                 {
                     MessageBox.Show("Login Successful");
+                    lastMessageBoxShownMessage = "Login Successful";
                     HomePage homePage = new HomePage(textUsername.Text);
                     homePage.ShowDialog();
                     this.Hide();
@@ -48,6 +50,7 @@ namespace FinalAssignment
                 else
                 {
                     MessageBox.Show("Login Unsuccessful");
+                    lastMessageBoxShownMessage = "Login Unsuccessful";
                     textPassword.Text = "";
                     loginCounter++;
                 }
@@ -55,6 +58,7 @@ namespace FinalAssignment
             else
             {
                 MessageBox.Show("You have entered the wrong credentials 3 times due to which your account has been locked.\nIn order to unlock your account answer the security question correctly.");
+                lastMessageBoxShownMessage = "You have entered the wrong credentials 3 times due to which your account has been locked.\nIn order to unlock your account answer the security question correctly.";
                 textUsername.Visible = false;
                 textPassword.Visible = false;
                 securityQuestions.Visible = true;
@@ -65,7 +69,7 @@ namespace FinalAssignment
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             Boolean result;
             result = obj.validateAnswer(textAnswer.Text, textUsername.Text);
@@ -79,14 +83,16 @@ namespace FinalAssignment
                 securityQuestions.Visible = false;
                 textAnswer.Visible = false;
                 button2.Visible = false;
+                loginCounter = 0;
             }
             else
             {
                 MessageBox.Show("Wrong Answer.");
+                lastMessageBoxShownMessage = "Wrong Answer.";
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void pictureBox1_Click(object sender, EventArgs e)
         {
             if (pictureBoxFlag)
             {
@@ -102,7 +108,7 @@ namespace FinalAssignment
             }
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        public void LoginForm_Load(object sender, EventArgs e)
         {
             textUsername.Visible = true;
             textPassword.Visible = true;
@@ -113,7 +119,7 @@ namespace FinalAssignment
             button2.Visible = false;
         }
 
-        private void securityQuestions_SelectedIndexChanged(object sender, EventArgs e)
+        public void securityQuestions_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -57,7 +57,6 @@ namespace FinalAssignment
                 {
                     while (reader.Read())
                     {
-                        MessageBox.Show(answer);
                         if (answer == reader["Answer"].ToString())
                         {
                             return true;

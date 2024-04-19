@@ -201,17 +201,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label BackgroundLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textUsername;
-        private System.Windows.Forms.TextBox textPassword;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox securityQuestions;
-        private System.Windows.Forms.TextBox textAnswer;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        internal System.Windows.Forms.Label BackgroundLabel;
+        internal System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.TextBox textUsername;
+        internal System.Windows.Forms.TextBox textPassword;
+        internal System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Label label3;
+        internal System.Windows.Forms.ComboBox securityQuestions;
+        internal System.Windows.Forms.TextBox textAnswer;
+        internal System.Windows.Forms.Button button2;
+        internal System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

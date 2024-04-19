@@ -133,11 +133,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        internal System.Windows.Forms.ComboBox comboBox1;
+        internal System.Windows.Forms.DataGridView dataGridView1;
+        internal System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Label label2;
+        internal System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.PictureBox pictureBox1;
     }
 }

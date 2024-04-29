@@ -125,9 +125,9 @@
             this.securityQuestions.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.securityQuestions.FormattingEnabled = true;
             this.securityQuestions.Items.AddRange(new object[] {
-            "What is your pets name?",
-            "What is your best friend\'s name?",
-            "What is your grandfather\'s name?"});
+            "What is your birthday?",
+            "What is your favorite day of the week?",
+            "What is your favorite month of the year?"});
             this.securityQuestions.Location = new System.Drawing.Point(78, 191);
             this.securityQuestions.Name = "securityQuestions";
             this.securityQuestions.Size = new System.Drawing.Size(246, 33);

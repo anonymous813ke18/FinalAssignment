@@ -12,19 +12,22 @@ namespace FinalAssignment
 {
     public partial class LoginForm : Form
     {
+        //Declaring global variables
         public static String lastMessageBoxShownMessage;
+        int loginCounter = 0;
+        Boolean pictureBoxFlag = false;
+
+        //Constructor
         public LoginForm()
         {
             InitializeComponent();
         }
 
+        //Declaring and Initializing objects of classes implemented in the program
         ValidateUser obj = new ValidateUser();
         RegistrationForm registrationForm = new RegistrationForm();
 
-        int loginCounter = 0;
-        
-        Boolean pictureBoxFlag = false;
-
+        //Method to call RegistrationForm.cs
         public void label2_Click(object sender, EventArgs e)
         {
             registrationForm.ShowDialog();
@@ -35,8 +38,10 @@ namespace FinalAssignment
         {
             bool result;
 
+            //Cheking the login counter
             if (loginCounter < 3)
             {
+                //Validating Log in credentials
                 result = obj.validateUser(textUsername.Text, textPassword.Text);
 
                 if (result)
@@ -55,6 +60,8 @@ namespace FinalAssignment
                     loginCounter++;
                 }
             }
+
+            //Locking the account after three failed login attempts
             else
             {
                 MessageBox.Show("You have entered the wrong credentials 3 times due to which your account has been locked.\nIn order to unlock your account answer the security question correctly.");
@@ -72,6 +79,8 @@ namespace FinalAssignment
         public void button2_Click(object sender, EventArgs e)
         {
             Boolean result;
+
+            //Validating the answer to the security question
             result = obj.validateAnswer(textAnswer.Text, textUsername.Text);
 
             if (result)
@@ -92,6 +101,7 @@ namespace FinalAssignment
             }
         }
 
+        //Method to show and hide password
         public void pictureBox1_Click(object sender, EventArgs e)
         {
             if (pictureBoxFlag)
@@ -108,6 +118,7 @@ namespace FinalAssignment
             }
         }
 
+        //Method to reset the LoginForm after answwer the security question correctly
         public void LoginForm_Load(object sender, EventArgs e)
         {
             textUsername.Visible = true;

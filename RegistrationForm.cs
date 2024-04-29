@@ -12,11 +12,13 @@ namespace FinalAssignment
 {
     public partial class RegistrationForm : Form
     {
+        //Constructor
         public RegistrationForm()
         {
             InitializeComponent();
         }
 
+        //Declaring a global variable
         Boolean pictureBoxFlag1 = false, pictureBoxFlag2 = false;
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -29,6 +31,7 @@ namespace FinalAssignment
 
         }
 
+        //Method to go to the LoginForm.cs class
         private void label14_Click(object sender, EventArgs e)
         {
             LoginForm obj = new LoginForm();
@@ -38,11 +41,16 @@ namespace FinalAssignment
 
         private void RegistrationBtn_Click(object sender, EventArgs e)
         {
+            //Declaring the Initializing variables used in the method
             String firstName = textFirstName.Text, lastName = textLastName.Text, email = textEmail.Text, gender = genderComboBox.Text, securityQ = securityQuesiton.Text, username = textUsername.Text, password = textPassword.Text, repass = textReenteredPassword.Text, answer = textAnswer.Text;
             int height = int.Parse(textHeight.Text), weight = int.Parse(textWeight.Text), counter1 = 0, counter2 = 0;
             long phoneNumber = long.Parse(textNumber.Text);
             bool inputResult;
 
+            //Declaring and Initializing the object of classes used in the method
+            InsertOperations insertOperations = new InsertOperations();
+
+            //Verifying the password length
             if (password.Length < 12)
             {
                 password = "";
@@ -52,6 +60,7 @@ namespace FinalAssignment
             }
             else
             {
+                //Verifying that password has an Uppercase and one Lowercase letter
                 foreach (char c in password)
                 {
                     if (char.IsUpper(c))
@@ -68,6 +77,7 @@ namespace FinalAssignment
                 }
             }
 
+            //Verifying that username only contains letters and digits
             foreach (char c in username)
             {
                 if (char.IsLetter(c) || char.IsDigit(c))
@@ -81,14 +91,17 @@ namespace FinalAssignment
                 }
             }
 
+            //Verifying that the password and re-entered password match
             if (password != repass)
             {
                 MessageBox.Show("The entered passwords should match.");
                 return;
             }
 
-            InsertOperations insertOperations = new InsertOperations();
+            //Inserting the details of the user in the UserInformation table of the database
             inputResult = insertOperations.insertIntoUserInformation(firstName, lastName, height, weight, phoneNumber, email, gender, username, password, securityQ, answer);
+
+            //Verifying that the user details have been recorded in the database successfully
             if (inputResult)
             {
                 MessageBox.Show("Registration Completed.");
@@ -110,6 +123,7 @@ namespace FinalAssignment
 
         }
 
+        //Method to show and hide the password
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (pictureBoxFlag1)
@@ -126,6 +140,7 @@ namespace FinalAssignment
             }
         }
 
+        //Method to show and hide the password
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (pictureBoxFlag2)

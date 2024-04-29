@@ -8,9 +8,12 @@ namespace FinalAssignment
 {
     class CalculateMET
     {
+        //Method to get the MET for all activities
         public float getMET(String activityName, String workoutIntensity)
         {
             float MET = 0;
+
+            //Calculating MET for Walking
             if (activityName == "Walking")
             {
                 if (workoutIntensity == "Casual")
@@ -27,6 +30,7 @@ namespace FinalAssignment
                 }
             }
 
+            //Calculating MET for Swimming
             else if (activityName == "Swimming")
             {
                 if (workoutIntensity == "Leisurely")
@@ -43,6 +47,7 @@ namespace FinalAssignment
                 }
             }
 
+            //Calculating MET for Running
             else if (activityName == "Running")
             {
                 if (workoutIntensity == "Slow")
@@ -59,6 +64,7 @@ namespace FinalAssignment
                 }
             }
 
+            //Calculating MET for Cycling
             else if (activityName == "Cycling")
             {
                 if (workoutIntensity == "Slow")
@@ -75,9 +81,11 @@ namespace FinalAssignment
                 }
             }
 
+            //Calculating MET for JumpRope
             else if (activityName == "Jump Rope")
                 MET = 12.0f;
 
+            //Calculating MET for Yoga
             else if (activityName == "Yoga")
             {
                 if (workoutIntensity == "Hatha")
@@ -94,6 +102,7 @@ namespace FinalAssignment
                 }
             }
 
+            //Returning the Calculated MET
             return MET;
         }
     }
